@@ -8,22 +8,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="table-primary">
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr class="table-secondary">
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr class="table-success">
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
+      <tr *ngFor="let rowData of data; let i = index;" class="table-primary">
+        <th scope="row">{{i+1}}</th>
+        <td>{{rowData.firstName}}</td>
+        <td>{{rowData.lastName}}</td>
+        <td>@{{rowData.handle}}</td>
       </tr>
     </tbody>
   </table>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeService } from '../services/home.service';
 
 @Component({
   selector: 'app-home',
@@ -8,8 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   title: string = "This is the HomePage"
   titleValue: string = "You just hovered!"
-  constructor() { }
-  tableData  = [
+  receivedValue: string = "" 
+  homeDatabaseData: any;
+  tableData = [
     {
       firstName: "Olayinka",
       lastName: "Famutimi",
@@ -27,7 +29,10 @@ export class HomeComponent implements OnInit {
     }
   ]
 
+  constructor(private homeService: HomeService) { }
+
   ngOnInit(): void {
+    this.homeDatabaseData =  this.homeService.getData()
   }
 
   doSomething(){
@@ -35,5 +40,10 @@ export class HomeComponent implements OnInit {
   }
   onButtonClicked() {
     alert("You clicked a button")
+  }
+
+  receiveValue($event: any) {
+    this.receivedValue = $event
+    
   }
 }

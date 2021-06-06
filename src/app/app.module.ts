@@ -11,6 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { FormsModule } from '@angular/forms';
 import { TaskComponent } from './task/task.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,14 @@ import { TaskComponent } from './task/task.component';
     FooterComponent,
     HomeComponent,
     AboutComponent,
-    TaskComponent
+    TaskComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,53 @@
+<app-header></app-header>
+<div class="container">
+  <h1>Contact us Page</h1>
+  <div class="jumbotron">
+    <h1 class="display-4">Contact us, Here we GO!!!</h1>
+    <p class="lead">{{description}}</p>
+    <hr class="my-4">
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </div>
+  <form #contactForm="ngForm" (submit)="onSubmit(contactForm)">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Email</label>
+        <input  type="email" name="email" ngModel class="form-control" id="inputEmail4" required minlength="3">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputname">Name</label>
+        <input type="text" name="fullName" ngModel class="form-control" id="inputname" required minlength="5">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputAddress">Address</label>
+      <input type="text"  name="address" ngModel class="form-control" id="inputAddress" required minlength="10" placeholder="1234 Main St">
+    </div>
+    <div class="form-group">
+        <label for="inputState">Relationship Status</label>
+        <select required name="status" id="inputState" class="form-control" ngModel>
+          <option selected>Choose...</option>
+          <option>Single</option>
+          <option>Married</option>
+          <option>Divorced</option>
+        </select>
+      </div>
+    <div class="form-group">
+      <label  for="inputAddress2">Reason for Contacting</label>
+      <input required minlength="10" type="text" name="reason" ngModel class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+    </div>
+    <div class="form-group">
+      <div class="form-check">
+        <input required name="check" ngModel class="form-check-input" type="checkbox" id="gridCheck">
+        <label class="form-check-label" for="gridCheck">
+          Agree to Terms and Conditions
+        </label>
+      </div>
+    </div>
+    <button [disabled]="contactForm.invalid" type="submit" class="btn btn-primary">Contact</button>
+  </form>
+  <!-- <app-card></app-card> -->
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia ipsum natus voluptatum recusandae iste quibusdam, illum voluptate eum laboriosam dolorum ex suscipit amet quod autem sequi tempora voluptatem dignissimos molestias.</p>
+  <!-- <app-table [data]="" ></app-table> -->
+</div>
+<app-footer (sendData)="receiveData($event)"></app-footer>

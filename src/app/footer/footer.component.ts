@@ -15,6 +15,7 @@ export class FooterComponent implements OnInit {
 
   onSendData() {
     console.log(this.homeValue);
+    this.sendData.emit(this.homeValue)
   }
  
 }
